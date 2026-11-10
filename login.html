@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in · Zuvori</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="logo">Zuvori<span class="dot">.</span></a>
+  </nav>
+
+  <main class="auth">
+    <a href="index.html" class="back-link">← Back to home</a>
+    <h1 id="auth-title">Welcome back</h1>
+    <form id="auth-form">
+      <label for="email" class="sr-only">Email</label>
+      <input type="email" id="email" placeholder="Email address" required autocomplete="email">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" placeholder="Password (6+ characters)" required minlength="6" autocomplete="current-password">
+      <button type="submit" id="auth-submit" class="btn">Log in</button>
+    </form>
+    <p id="auth-message" class="auth-message" role="status"></p>
+    <p class="auth-switch"><span id="switch-text">New here?</span> <button type="button" id="switch-btn" class="link-btn">Create an account</button></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

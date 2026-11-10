@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your character · Zuvori</title>
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main class="tracker">
+    <div class="app-bar">
+      <a class="back" href="index.html">← Zuvori<span class="dot">.</span></a>
+    </div>
+
+   <section class="panel">
+      <h1>Your character</h1>
+      <div id="avatar" class="avatar-stage"></div>
+      <div id="tabs" class="cc-tabs"></div>
+      <div id="controls"></div>
+      <div class="cc-act">
+        <button id="rnd" class="btn btn-ghost" type="button">Surprise me</button>
+        <button id="party" class="btn btn-ghost" type="button" style="margin-top:.75rem">Celebrate</button>
+        <button id="save-char" class="btn big" type="button" style="margin-top:.75rem">Save my character</button>
+        <p id="save-note" class="note"></p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Main">
+    <a href="index.html" class="tab">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg>
+      <span>Run</span>
+    </a>
+    <a href="history.html" class="tab">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6"/></svg>
+      <span>Progress</span>
+    </a>
+    <a href="me.html" class="tab active" aria-current="page">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      <span>Me</span>
+    </a>
+  </nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="avatar.js"></script>
+  <script src="me.js"></script>
+</body>
+</html>

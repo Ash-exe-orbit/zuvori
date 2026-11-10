@@ -1,0 +1,18 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/

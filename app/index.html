@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zuvori Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <main class="tracker">
+    <div class="app-bar">
+        
+  <a class="back" href="../index.html">← Zuvori<span class="dot">.</span></a>
+  
+  <button id="logout-btn" class="link-btn" type="button">Log out</button>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch between light and dark mode">◐</button>
+</div>
+
+    <section id="screen-start" class="panel">
+      <h1>Ready to move?</h1>
+      <p>Pick your activity, then press Start.</p>
+      <div class="toggle">
+        <button type="button" class="toggle-btn selected" data-activity="Walk">Walk</button>
+        <button type="button" class="toggle-btn" data-activity="Run">Run</button>
+      </div>
+      <button id="start-btn" class="btn big" type="button">Start</button>
+      <p id="start-note" class="note">We use your location only to measure your distance.</p>
+    </section>
+
+    <section id="screen-live" class="panel" hidden>
+      <p id="gps-status" class="gps weak">Getting GPS signal…</p>
+     <div class="ring-wrap">
+  <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+    <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+    <circle id="ring-fg" class="ring-fg" cx="60" cy="60" r="52"></circle>
+  </svg>
+  <div class="ring-center">
+    <div id="time" class="time">00:00</div>
+    <small>active time</small>
+  </div>
+</div>
+      <div class="stats">
+        <div><span id="distance">0.00</span><small>km</small></div>
+        <div><span id="pace">--:--</span><small>avg min/km</small></div>
+      </div>
+      <div class="controls">
+        <button id="pause-btn" class="btn" type="button">Pause</button>
+        <button id="finish-btn" class="btn btn-dark" type="button">Finish</button>
+      </div>
+      <h2>Splits</h2>
+      <ol id="splits" class="splits"></ol>
+      <p id="no-splits" class="note">Your first kilometre will appear here.</p>
+    </section>
+
+    <section id="screen-summary" class="panel" hidden>
+      <h1>Session complete</h1>
+      <div id="summary-body"></div>
+
+      <p id="save-note" class="note"></p>
+
+      <div class="share-box">
+  <h2>Share your run</h2>
+ <label class="btn btn-outline photo-pick">
+  <input type="file" id="camera-input" accept="image/*" capture="user" hidden>
+  Take a photo
+</label>
+<label class="btn btn-outline photo-pick">
+  <input type="file" id="photo-input" accept="image/*" hidden>
+  Choose from your photos
+</label>
+
+  <p class="photo-hint">Make your card yours. Your photo stays on your phone until you share.</p>
+
+  <canvas id="share-canvas" width="1080" height="1350"></canvas>
+  <button id="share-btn" class="btn big" type="button">Share or save image</button>
+</div>
+
+      <button id="again-btn" class="btn big" type="button">New session</button>
+    </section>
+  </main>
+  <nav class="tabbar" aria-label="Main">
+    <a href="index.html" class="tab active" aria-current="page">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg>
+      <span>Run</span>
+    </a>
+    <a href="history.html" class="tab">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6"/></svg>
+      <span>Progress</span>
+    </a>
+    <a href="me.html" class="tab">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+      <span>Me</span>
+    </a>
+  </nav>
+  <div id="confirm" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <h2 id="confirm-title">Finish this session?</h2>
+      <p>You'll see your summary next.</p>
+      <div class="controls">
+        <button id="confirm-no" class="btn btn-ghost" type="button">Keep going</button>
+        <button id="confirm-yes" class="btn" type="button">Finish</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="avatar.js"></script>
+  <script src="tracker.js"></script>
+</body>
+</html>
+ 

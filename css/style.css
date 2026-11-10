@@ -1,0 +1,211 @@
+:root {
+  --bg: #FAF7F5;
+  --surface: #FFFFFF;
+  --text: #14141A;
+  --accent: #B01228;
+  --accent-grad: linear-gradient(160deg, #C4172F, #8E0E22);
+  --success: #0E7A3D;
+  --ice: #1F6FEB;
+  --glow: rgba(208, 28, 56, .14);
+
+  /* Old names, kept so the tracker keeps working until Step 10 */
+  --cream: var(--bg);
+  --ink: var(--text);
+  --orange: var(--accent);
+  --green: var(--success);
+  --yellow: #FFC93C;
+  --pink: #E8467C;
+}
+
+[data-theme="dark"] {
+  --bg: #0B0B0F;
+  --surface: #16161D;
+  --text: #F5F3F1;
+  --accent: #D4203A;
+  --success: #B6F23C;
+  --ice: #5AB0FF;
+  --glow: rgba(212,32, 58, .22);
+}
+
+h1, h2, h3 { letter-spacing: -.02em; }
+
+* { box-sizing: border-box; }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "inter", system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  background: radial-gradient(ellipse at top var(--glow,transparent 70%))
+}
+
+.hero > * { max-width: 720px; margin-left: auto; margin-right: auto; }
+
+.eyebrow {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--cream);
+  font-weight: 700;
+  font-size: .9rem;
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin: 0 auto 1rem;
+}
+
+.hero-sub { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+.character-slot {
+  margin-top: 2.5rem;
+  padding: 2.5rem 1rem;
+  border: 3px dashed var(--ink);
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent-grad);
+  color: #fff;
+  font-weight: 700;
+  padding: .9rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.section h2 { font-size: 2rem; margin: 0 0 1rem; }
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.card h3 { margin: 0 0 .5rem; }
+.card:nth-child(1) { border-top: 8px solid var(--orange); }
+.card:nth-child(2) { border-top: 8px solid var(--green); }
+.card:nth-child(3) { border-top: 8px solid var(--pink); }
+
+.btn-outline{
+    background: transparent;
+    border: 2px solid var(--ink);
+    margin-left: .5rem;
+    color: var(--text);
+}
+
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; }
+.theme-toggle { background: var(--surface); color: var(--text); border: 2px solid var(--text);
+  border-radius: 999px; width: 2.6rem; height: 2.6rem; font-size: 1.2rem; cursor: pointer; }
+
+  .logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo .dot { color: var(--accent); }
+
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-link { color: var(--text); font-weight: 700; text-decoration: none; }
+
+/* Phone screens */
+@media (max-width: 600px) {
+  .hero { padding: 2.5rem 1.25rem; }
+  .btn-outline{margin: .75rem 0 0;}
+  .hero h1 { font-size: 2.4rem; }
+  .hero p { font-size: 1.05rem; }
+
+  .section { padding: 2rem 1.25rem; }
+  .section h2 { font-size: 1.6rem; }
+
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.waitlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.waitlist input {
+  flex: 1 1 260px;
+  max-width: 380px;
+  padding: .9rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.waitlist input:focus {
+  outline: 3px solid var(--yellow);
+}
+
+.waitlist .btn {
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-message {
+  font-weight: 700;
+  color: var(--green);
+  min-height: 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.footer {
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer p { margin: .25rem 0; }

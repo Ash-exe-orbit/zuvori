@@ -1,0 +1,11 @@
+.auth { max-width: 400px; margin: 2rem auto; padding: 0 1.25rem; text-align: center; }
+.auth form { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.5rem; }
+.auth input { padding: .9rem 1.2rem; font-size: 1rem; font-family: inherit; border-radius: 14px;
+  border: 1px solid rgba(128,128,128,.5); background: var(--surface); color: var(--text); }
+.auth input:focus { outline: 3px solid var(--accent); }
+.auth .btn { border: none; font-size: 1rem; font-family: inherit; cursor: pointer; width: 100%; }
+.auth-message { min-height: 1.5rem; font-weight: 700; color: var(--accent); }
+.link-btn { background: none; border: none; color: var(--text); font: inherit; font-weight: 700;
+  text-decoration: underline; cursor: pointer; padding: 0; }
+.back-link { display: block; text-align: left; margin-bottom: 1rem;
+  color: var(--text); font-weight: 700; text-decoration: none; }
