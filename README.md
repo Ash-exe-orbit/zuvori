@@ -48,3 +48,24 @@ Zuvori is an ongoing independent project. Core activity-tracking and character-p
 To build a movement community where people can stay active, connect with others and move at their own pace.
 
 **Your Pace, Your People.**
+
+
+## Screenshots
+
+### 1. Landing Page
+![Zuvori Landing Page](screenshots/01-zuvori-landing-page.jpeg)
+
+### 2. Activity Selection
+![Activity Selection](screenshots/02-activity-selection.jpeg)
+
+### 3. Active Session Tracker
+![Active Session Tracker](screenshots/03-active-session-tracker.jpeg)
+
+### 4. Session Complete and Sharing
+![Session Complete](screenshots/04-session-complete-and-share.jpeg)
+
+### 5. Progress and Run History
+![Progress and Run History](screenshots/05-progress-and-run-history.jpeg)
+
+### 6. Character Customisation
+![Character Customisation](screenshots/06-character-customisation.jpeg)
